@@ -4,8 +4,10 @@
 
 #include "MonteCarloPricer.h"
 #include <cmath>
+#include <iostream>
 
-double MonteCarloPricer::operator()() {
+double MonteCarloPricer::operator() () const
+{
     double payoffSum = 0.;
     double maturity = m_option->getMaturity();
 

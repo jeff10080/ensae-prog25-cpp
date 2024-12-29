@@ -20,11 +20,13 @@ public:
     BlackScholesModel(double r, double sigma, double s0) : m_r(r), m_sigma(sigma), m_s0(s0){}
     ~BlackScholesModel() = default;
 
-    double simulatePrice(const double& T, const size_t & steps) const;
+    [[nodiscard]] double simulatePrice(const double T, const size_t steps) const; //Simulate the price using the Monte Carlo method for time T
 
-    double getRiskFree() const;
+    void simulateReplicationStrat(const double T, const size_t steps, const double K, const double initialCash, const OptionType type) const; //Simulate the price with a replication strategy using delta hedging
 
-    double delta(OptionType type, double T, double K) const;
+    [[nodiscard]] double getRiskFree() const;//Getter function for the risk free rate r, used by another class
+
+    [[nodiscard]] double delta(const OptionType type, const double T, const double K) const; //Computes the delta of the option at strike price T and maturity T
 };
 
 #endif //PROJET_ENSAE_BLACKSCHOLESMODEL_H

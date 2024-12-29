@@ -6,9 +6,9 @@
 #include <limits>
 #include "Option.h"
 
-double Option::payoff(const double& ST) //Return the correct payoff based on option type
+double Option::payoff(const double ST) const //Return the correct payoff based on option type
 {
-    switch(m_type)
+    switch(m_type) //We use the type to choose the correct way to compute the payoff, in case of an error, returns NaN
     {
         case call:
             return std::max(ST - m_strike, 0.);
@@ -20,6 +20,7 @@ double Option::payoff(const double& ST) //Return the correct payoff based on opt
 
 }
 
-double Option::getMaturity() const {
+double Option::getMaturity() const
+{
     return m_maturity;
 }

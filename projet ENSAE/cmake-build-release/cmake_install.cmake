@@ -1,4 +1,4 @@
-# Install script for directory: E:/Code Projects/projet ENSAE
+# Install script for directory: C:/Users/adam0/CLionProjects/ensae-prog25-cpp/projet ENSAE
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -52,6 +52,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "E:/Code Projects/projet ENSAE/cmake-build-release/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "C:/Users/adam0/CLionProjects/ensae-prog25-cpp/projet ENSAE/cmake-build-release/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
