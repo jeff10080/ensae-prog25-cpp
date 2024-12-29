@@ -24,3 +24,13 @@ double Option::getMaturity() const
 {
     return m_maturity;
 }
+
+double Option::getStrike() const
+{
+    return m_maturity;
+}
+
+OptionType Option::getType() const
+{
+    return m_type;
+}

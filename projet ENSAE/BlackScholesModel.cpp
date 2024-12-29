@@ -47,8 +47,8 @@ double BlackScholesModel::delta(const OptionType type, double T, const double K)
     }
 }
 
-void BlackScholesModel::simulateReplicationStrat(const double T, const size_t steps, const double K,
-                                                   const double initialCash, const OptionType type) const
+void BlackScholesModel::simulateReplicationStrat(const double T, const size_t steps, const Option option,
+                                                   const double initialCash) const
 {
     static std::random_device rd;
     static std::mt19937 gen(rd());
@@ -62,7 +62,7 @@ void BlackScholesModel::simulateReplicationStrat(const double T, const size_t st
 
     for (int i = 0; i < steps; i++)
     {
-        double deltaNew = delta(type, T - i * dt, K); //Refresh the delta
+        double deltaNew = delta(option.getType(), T - i * dt, option.getStrike()); //Refresh the delta
 
         double dS = St * (deltaNew - deltaOld);  // Quanitity to buy/sell to hedge the position
         cash -= dS;  //Update the cash

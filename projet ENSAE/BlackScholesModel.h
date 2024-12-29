@@ -22,7 +22,7 @@ public:
 
     [[nodiscard]] double simulatePrice(const double T, const size_t steps) const; //Simulate the price using the Monte Carlo method for time T
 
-    void simulateReplicationStrat(const double T, const size_t steps, const double K, const double initialCash, const OptionType type) const; //Simulate the price with a replication strategy using delta hedging
+    void simulateReplicationStrat(const double T, const size_t steps, const Option option, const double initialCash) const; //Simulate the price with a replication strategy using delta hedging
 
     [[nodiscard]] double getRiskFree() const;//Getter function for the risk free rate r, used by another class
 

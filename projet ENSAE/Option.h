@@ -21,6 +21,8 @@ public:
 
     [[nodiscard]] double payoff(const double ST) const; //Compute the payoff of the option with the underlying price S at time T
     [[nodiscard]] double getMaturity() const; //Getter function for the maturity, used by another class
+    [[nodiscard]] double getStrike() const; //Getter function for the strike price , used by another class
+    [[nodiscard]] OptionType getType() const; //Getter function for the option type, used by another class
 };
 
 
